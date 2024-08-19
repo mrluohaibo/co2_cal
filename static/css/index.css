@@ -1,0 +1,27 @@
+
+body{
+    background-color: rgba(200,200,200,0.1);
+}
+
+.all_main{
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+    background-color: white;
+    min-height: 900px;
+}
+
+.input_item{
+    height:60px;
+    line-height:60px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+
+.input_item .ele_name{
+    width:60px;
+    text-align:right
+
+}

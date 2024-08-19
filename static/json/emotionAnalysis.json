@@ -1,0 +1,265 @@
+[
+  {
+    "productEmotionAnalysis": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "个人偏好",
+                "percent": 0.3333,
+                "value": 1
+              },
+              {
+                "name": "购买行为",
+                "percent": 0.3333,
+                "value": 1
+              },
+              {
+                "name": "购物体验",
+                "percent": 0.3333,
+                "value": 1
+              }
+            ],
+            "name": "商品特性",
+            "percent": 0.5556,
+            "value": 5
+          },
+          {
+            "children": [
+              {
+                "name": "满意",
+                "percent": 1.0000,
+                "value": 2
+              }
+            ],
+            "name": "用户情感反馈",
+            "percent": 0.2222,
+            "value": 2
+          },
+          {
+            "children": null,
+            "name": "购物体验",
+            "percent": 0.2222,
+            "value": 2
+          }
+        ],
+        "name": "积极",
+        "percent": 0.5833,
+        "value": 7
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "遭遇或碰到",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "产品问题",
+            "percent": 0.5000,
+            "value": 1
+          },
+          {
+            "children": [
+              {
+                "name": "质量问题",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "用户情感反馈",
+            "percent": 0.5000,
+            "value": 1
+          }
+        ],
+        "name": "消极",
+        "percent": 0.0833,
+        "value": 1
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "寻求信息",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "产品问题",
+            "percent": 0.2000,
+            "value": 1
+          },
+          {
+            "children": [
+              {
+                "name": "产品遗憾",
+                "percent": 0.5000,
+                "value": 1
+              },
+              {
+                "name": "生产信息",
+                "percent": 0.5000,
+                "value": 1
+              }
+            ],
+            "name": "商品特性",
+            "percent": 0.6000,
+            "value": 3
+          },
+          {
+            "children": [
+              {
+                "name": "一般",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "用户情感反馈",
+            "percent": 0.2000,
+            "value": 1
+          }
+        ],
+        "name": "中立",
+        "percent": 0.3333,
+        "value": 4
+      }
+    ],
+    "productName": "PRODUCT_99429"
+  },
+  {
+    "productEmotionAnalysis": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "书本质量优秀",
+                "percent": 1.0000,
+                "value": 2
+              }
+            ],
+            "name": "书籍品质与包装",
+            "percent": 0.3333,
+            "value": 3
+          },
+          {
+            "children": [
+              {
+                "name": "书籍质量良好",
+                "percent": 0.5000,
+                "value": 1
+              },
+              {
+                "name": "附属品美观",
+                "percent": 0.5000,
+                "value": 1
+              }
+            ],
+            "name": "商品特性与使用",
+            "percent": 0.1111,
+            "value": 1
+          },
+          {
+            "children": null,
+            "name": "外包装状态",
+            "percent": 0.1111,
+            "value": 1
+          },
+          {
+            "children": [
+              {
+                "name": "对快递服务的满意度高",
+                "percent": 0.7500,
+                "value": 3
+              },
+              {
+                "name": "快递时效性高",
+                "percent": 0.2500,
+                "value": 1
+              }
+            ],
+            "name": "配送与服务体验",
+            "percent": 0.4444,
+            "value": 4
+          }
+        ],
+        "name": "积极",
+        "percent": 0.6000,
+        "value": 9
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "物品包装状态",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "书籍特性与使用",
+            "percent": 1.0000,
+            "value": 2
+          }
+        ],
+        "name": "消极",
+        "percent": 0.1333,
+        "value": 2
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "name": "接近预期",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "书籍品质与包装",
+            "percent": 0.2000,
+            "value": 1
+          },
+          {
+            "children": [
+              {
+                "name": "使用场景",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "书籍特性与使用",
+            "percent": 0.4000,
+            "value": 2
+          },
+          {
+            "children": null,
+            "name": "商品特性与使用",
+            "percent": 0.2000,
+            "value": 1
+          },
+          {
+            "children": [
+              {
+                "name": "耐用性与功能完整性",
+                "percent": 1.0000,
+                "value": 1
+              }
+            ],
+            "name": "外包装状态",
+            "percent": 0.2000,
+            "value": 1
+          }
+        ],
+        "name": "中立",
+        "percent": 0.2667,
+        "value": 4
+      }
+    ],
+    "productName": "PRODUCT_99832"
+  }
+]

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>碳排放计算</title>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.form.min.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<div class="all_main">
+
+    <div class="input_area">
+        <div class="input_item">
+            <div class="ele_name" >电力</div>
+            <div>
+                <input type="number"  id="electric">
+            </div>
+            <div>kWh</div>
+        </div>
+         <div class="input_item">
+            <div class="ele_name">天然气</div>
+            <div>
+                <input type="number"  id="petroleum">
+            </div>
+            <div>m³</div>
+        </div>
+         <div class="input_item">
+            <div class="ele_name">铝</div>
+            <div>
+                <input type="number" id="aluminum">
+            </div>
+            <div>kg</div>
+        </div>
+         <div class="input_item">
+            <div class="ele_name">钢</div>
+            <div>
+                <input type="number"  id="steel">
+            </div>
+            <div>kWh</div>
+        </div>
+    </div>
+
+    <div>
+        <div class="input_item">
+            <div class="ele_name"></div>
+            <button id="cal_bt">计算</button>
+        </div>
+    </div>
+        <div>计算结果：<div>
+        <div id="output_content">
+
+        </div>
+    <div>
+
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        let start_request = false
+
+        function show_data(data){
+            if(data.code == 500){
+                alert(data.result)
+                return
+            }else{
+                let last_res = data.result
+                let list_output = last_res["list_output"]
+                let total_info = last_res["total_info"]
+                console.log(list_output)
+                console.log(total_info)
+                let list_str = ""
+                let total_last = ""
+                for (let i=0,len=list_output.length; i<len; i++){
+                    let item = list_output[i]
+                    let item_str = item["ele_name"]+":"+ item["input_val"] + item["ele_unit"] + "*" + item["co2_per_unit"]+item["co2_unit"]+"/"+item["ele_unit"] + "=" + item["output_val"] + item["co2_unit"] +"<br/>"
+                    list_str = list_str + item_str
+                    total_last = total_last + item["output_val"]
+                    if (i < len - 1){
+                        total_last = total_last + "+"
+                    }
+                }
+
+                total_pre = "总碳排放量:<br/>"
+                total_last = total_pre + total_last + " = " + total_info["output_val"] + total_info["output_unit"]
+
+
+
+
+                $("#output_content").html(list_str + total_last)
+
+            }
+        }
+
+
+        $("#cal_bt").on("click",function(){
+            let electric = $("#electric").val()
+            let petroleum = $("#petroleum").val()
+            let aluminum = $("#aluminum").val()
+            let steel = $("#steel").val()
+            let input_list = []
+            if ( electric != ""  ){
+               item = {}
+               item["ele_id"]="electric"
+               item["input_val"]=electric
+               input_list.push(item)
+            }
+            if (petroleum != ""  ){
+                item = {}
+               item["ele_id"]="petroleum"
+               item["input_val"]=petroleum
+               input_list.push(item)
+
+            }
+            if (  aluminum != ""  ){
+                item = {}
+               item["ele_id"]="aluminum"
+               item["input_val"]=aluminum
+               input_list.push(item)
+
+            }
+            if (  steel != "" ){
+                item = {}
+               item["ele_id"]="steel"
+               item["input_val"]=steel
+               input_list.push(item)
+
+            }
+
+            console.log(input_list)
+
+            if (input_list.length > 0){
+                if(start_request){
+                    return
+                }
+                start_request = true
+                input_data = {"input_list":input_list}
+               $.ajax({
+                    type:"post",
+                    url:"http://localhost:8980/cal_input",
+
+                    data:JSON.stringify(input_data),
+                    dataType:"json",
+                    success: function(data){
+                        console.log(data);
+                        start_request = false
+                        show_data(data)
+                    }
+            });
+
+            }
+
+        })
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
